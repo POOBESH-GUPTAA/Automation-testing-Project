@@ -11,7 +11,10 @@ public class OpenCartTesting {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.opencart.com/");
 		driver.manage().window().maximize();
-		WebElement reg = driver.findElement(By.xpath("//a[@class='btn btn-black navbar-btn']"));
+		WebElement h1 = driver.findElement(By.xpath("//h1[text()='The best FREE and open-source eCommerce platform']"));
+		String printH1 = h1.getText();
+		System.out.println(printH1);
+		WebElement reg = driver.findElement(By.xpath("(//a[text()='Login'])[2]"));
 		reg.click();
 	}
 
